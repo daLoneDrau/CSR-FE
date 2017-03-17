@@ -10,6 +10,7 @@ angular.module('restApp').run(function($templateCache) {
     <ul class="nav"> \
         <li class="nav-item"><a class="nav-link active" href="#!omens">Table 1.3a - Birth Omens</a></li> \
         <li class="nav-item"><a class="nav-link active" href="#!social_class">Table 1.5a - Social Class</a></li> \
+        <li class="nav-item"><a class="nav-link active" href="#!father_vocation">Table 1.5b - Father\'s Vocation</a></li> \
     </ul> \
 </div> \
 <!-- this menu will only be visible when screen is medium or small. extra small has no menu. --> \
@@ -18,6 +19,7 @@ angular.module('restApp').run(function($templateCache) {
     <ol> \
         <li class="nav-item"><a class="nav-link active" href="#!omens">Birth Omens</a></li> \
         <li class="nav-item"><a class="nav-link active" href="#!social_class">Social Class</a></li> \
+        <li class="nav-item"><a class="nav-link active" href="#!father_vocation">Father\'s Vocation</a></li> \
     </ol> \
 </div> \
     ';

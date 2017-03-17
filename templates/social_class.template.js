@@ -7,7 +7,7 @@ angular.module('restApp').run(function($templateCache) {
     <basic-nav></basic-nav> \
     <div class="col-sm-9"> \
 	    <div class="col-sm-12"> \
-	    	<table class="table" style="border:2px solid #ddd;"> \
+	    	<table class="table table-striped" style="border:2px solid #ddd;"> \
     			<thead> \
 		    	    <tr style="background-color:#000;color:#fff;"> \
 	    				<th class="text-center">1D100</th> \

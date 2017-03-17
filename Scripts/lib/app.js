@@ -17,6 +17,11 @@ angular.module('restApp').config(function($routeProvider) {
     .when("/social_class", {
         controller: "SocialClassController",
         templateUrl: 'social_class'
+    })
+    // FATHERS VOCATIONS
+    .when("/father_vocation", {
+        controller: "FatherVocationController",
+        templateUrl: 'father_vocation'
     });                                 
 });
 
