@@ -32,7 +32,7 @@ angular.module('restApp').run(function($templateCache) {
 	    	  	</thead> \
 			  	<tbody> \
 			    	<tr ng-repeat="entity in selected_entities | orderBy:[\'id\']"> \
-				        <td class="text-center" style="border-right:2px solid #ddd;"><span ng-if="entity.roll_min<10">0</span>{{entity.roll_min}}<span ng-if="entity.roll_min!=entity.roll_max">-{{entity.roll_max}}</span>%</td> \
+				        <td class="text-center" style="border-right:2px solid #ddd;"><span ng-if="entity.roll_min<10">0</span>{{entity.roll_min}}<span ng-if="entity.roll_min!=entity.roll_max">-<span ng-if="entity.roll_max<10">0</span>{{entity.roll_max}}</span>%</td> \
 				        <td style="border-right:2px solid #ddd;">{{entity.name}}<span ng-if="entity.is_liveried"> (L)</span><span ng-if="entity.name==\'Labourer\'||entity.name==\'Sergeant\'||entity.name==\'Man-At-Arms\'"><sup>2</sup></span></td> \
     					<td style="border-right:2px solid #ddd;"> \
 						    <span ng-repeat="skill in entity.starting_skills"><span ng-if="!$first">, </span>{{skill.name}}</span> \
@@ -41,10 +41,11 @@ angular.module('restApp').run(function($templateCache) {
 						    <span ng-if="entity.num_starting_animal_skills>0"><span ng-if="entity.starting_skills.length>0||entity.binary_skills.length>0">, </span>{{entity.num_starting_animal_skills}} Animal Skill<span ng-if="entity.num_starting_animal_skills>1">s</span></span> \
 						    <span ng-if="entity.num_starting_combat_skills>0"><span ng-if="entity.num_starting_agricultural_skills>0||entity.num_starting_animal_skills>0||entity.starting_skills.length>0||entity.binary_skills.length>0"> + </span>{{entity.num_starting_combat_skills}} Combat Skill<span ng-if="entity.num_starting_combat_skills>1">s</span></span> \
 						    <span ng-if="entity.num_starting_outdoor_skills>0"><span ng-if="entity.num_starting_agricultural_skills>0||entity.num_starting_animal_skills>0||entity.starting_skills.length>0||entity.binary_skills.length>0"> + </span>{{entity.num_starting_outdoor_skills}} Outdoor Skill<span ng-if="entity.num_starting_outdoor_skills>1">s</span></span> \
+						    <span ng-if="entity.num_starting_trade_skills>0"><span ng-if="entity.num_starting_agricultural_skills>0||entity.num_starting_animal_skills>0||entity.starting_skills.length>0||entity.binary_skills.length>0"> + </span>{{entity.num_starting_trade_skills}} Trade Skill<span ng-if="entity.num_starting_trade_skills>1">s</span></span> \
 						    <span ng-if="entity.num_starting_thievery_skills>0"><span ng-if="entity.num_starting_agricultural_skills>0||entity.num_starting_animal_skills>0||entity.starting_skills.length>0||entity.binary_skills.length>0"> + </span>{{entity.num_starting_thievery_skills}} Thievery Skill<span ng-if="entity.num_starting_thievery_skills>1">s</span></span> \
 						    <span ng-if="entity.num_starting_bonus_skills>0"><span ng-if="entity.num_starting_agricultural_skills>0||entity.num_starting_animal_skills>0||entity.starting_skills.length>0||entity.binary_skills.length>0"> + </span>{{entity.num_starting_bonus_skills}} Skill<span ng-if="entity.num_starting_bonus_skills>1">s</span><sup>1</sup></span> \
 						</td> \
-    					<td class="text-center">{{entity.social_status}}<span ng-if="entity.thieves_guild_status>0">/{{entity.thieves_guild_status}}<sup>2</sup></span></td> \
+    					<td class="text-center"><span ng-if="entity.social_status<10">0</span>{{entity.social_status}}<span ng-if="entity.thieves_guild_status>0">/{{entity.thieves_guild_status}}<sup>2</sup></span></td> \
 				    </tr> \
     				<tr style="border-top:2px solid #ddd;"> \
     					<td colspan=4> \
