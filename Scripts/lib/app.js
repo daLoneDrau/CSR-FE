@@ -22,6 +22,16 @@ angular.module('restApp').config(function($routeProvider) {
     .when("/father_vocation", {
         controller: "FatherVocationController",
         templateUrl: 'father_vocation'
+    }) 
+    // SIBLING RANKS
+    .when("/sibling_rank", {
+        controller: "SiblingRankController",
+        templateUrl: 'sibling_rank'
+    }) 
+    // FAMILY STATUS
+    .when("/family_status", {
+        controller: "FamilyStatusController",
+        templateUrl: 'family_status'
     });                                 
 });
 
