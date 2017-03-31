@@ -172,3 +172,34 @@ angular.module('restApp').factory('familyStatusService', function($http, $q) {
     };
     return dataFactory;
 });
+
+angular.module('restApp').factory('ioPcDataService', function($http, $q) {
+    var urlBase = [ httpBasicBase, 'io_pc_data' ].join("");
+    var dataFactory = {};
+
+    dataFactory.getEntities = function () {
+        var defer = $q.defer();
+        defer.resolve($http.get(urlBase));
+        return defer.promise;
+    };
+    dataFactory.getEntity = function (id) {
+        return $http.get(urlBase + '/' + id);
+    };
+    dataFactory.insertEntity = function (entity) {
+        var defer = $q.defer();
+        defer.resolve($http.post(urlBase, entity));
+        return defer.promise;
+    };
+    dataFactory.updateEntity = function (entity) {
+        var defer = $q.defer();
+        defer.resolve($http.put(urlBase, entity));
+        return defer.promise;
+    };
+    dataFactory.deleteEntity = function (id) {
+        return $http.delete(urlBase + '/' + id);
+    };
+    dataFactory.getRandomEntity = function () {
+        return $http.get(urlBase + '/random_hero');
+    };
+    return dataFactory;
+});
